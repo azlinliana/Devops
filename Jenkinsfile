@@ -6,12 +6,16 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh "docker-compose up -d"
+        sh '''
+          COPY ./ /root/home
+          docker-compose up -d
+        '''
       }
     }
     stage('Test') {
       steps {
         sh '''
+          COPY ./ /root/home
           apt update
           apt install -y python3 python3-pip python3-venv
           python3 -m venv /venv
