@@ -1,0 +1,24 @@
+# Docker Compose for Jenkins
+
+version: '3.8'
+services:
+  jenkins:
+    container_name: devops_docker_jenkins
+    privileged: true
+    user: root
+    restart: always
+    build:
+      context: ./
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    networks:
+      - dockerjenkinsnetwork
+    volumes:
+      - ./DevOpsJenkins:/DevOpsJenkins
+      - ./JenkinsHome:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+
+networks:
+  dockerjenkinsnetwork:
+    driver: bridge

@@ -1,0 +1,4 @@
+.env
+
+# Jenkins Volume
+JenkinsHome/
