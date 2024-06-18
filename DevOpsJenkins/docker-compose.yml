@@ -7,11 +7,11 @@ services:
     image: mysql:latest
     restart: always
     environment: 
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_PORT: ${MYSQL_PORT}
+      MYSQL_DATABASE: devopsdb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: my-user-pw
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_PORT: 3306
     networks: 
       - mynetwork
 
