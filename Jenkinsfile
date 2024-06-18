@@ -7,7 +7,7 @@ pipeline {
     stage('Build') {
       steps {
         sh '''
-          cp ./ /root/home/
+          cp -r . /root/home/
           cd /root/home
           ls
           docker-compose up -d
@@ -17,7 +17,7 @@ pipeline {
     stage('Test') {
       steps {
         sh '''
-          cp ./ /root/home/
+          cp -r . /root/home/
           cd /root/home
           ls
           apt update
