@@ -10,7 +10,7 @@ pipeline {
           cp -r . /root/home/
           cd /root/home
           ls
-          docker-compose up -d
+          docker compose up -d
         '''
       }
     }
